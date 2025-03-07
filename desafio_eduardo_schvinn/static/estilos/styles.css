@@ -1,0 +1,174 @@
+/* Paleta de cores para o tema */
+:root {
+    --branco-principal: #FFFFFF;
+    --verde-detalhes: #4CAF50;
+    --verde-escuro: #388E3C;
+    --verde-claro: #81C784;
+    --cinza-fundo: #F4F4F4;
+    --cinza-texto: #666666;
+}
+/* Estilo geral do corpo da página */
+body {
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-texto);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Configuração para evitar inconsistências */
+* {
+    box-sizing: border-box;
+}
+/* Container principal que alinha os elementos */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+/* Seções com fundo branco e borda verde */
+.section {
+    width: 80%;
+    padding: 20px;
+    background-color: var(--branco-principal);
+    border: 2px solid var(--verde-detalhes);
+    border-radius: 8px;
+    text-align: center;
+}
+/* Estilo para títulos de nível 1 */
+h1 {
+    color: var(--cinza-texto);
+    font-size: 1rem;
+    text-align: center;
+}
+/* Estilo para títulos de nível 2 */
+h2 {
+    color: var(--verde-detalhes);
+    font-size: 1.5rem;
+    text-align: center;
+}
+/* Configuração geral do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+/* Estilo para rótulos do formulário */
+form label {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--cinza-texto);
+}
+/* Campos de entrada do formulário */
+form input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--verde-detalhes);
+    border-radius: 5px;
+}
+/* Botão do formulário */
+form button {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1.1rem;
+    background-color: var(--verde-detalhes);
+    color: var(--branco-principal);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Estilo ao passar o mouse sobre o botão */
+form button:hover {
+    background-color: var(--verde-escuro);
+}
+/* Espaçamento e alinhamento dos rótulos */
+form label {
+    width: 80%; 
+    max-width: 400px;
+    text-align: left; 
+    font-size: 1rem;
+    color: var(--cinza-texto);
+    margin-bottom: 5px; 
+}
+
+/* Ajuste geral para inputs e botões */
+form input, form button {
+    width: 80%; 
+    max-width: 400px;
+    margin-bottom: 15px; 
+}
+/* Estilo do parágrafo explicativo sobre o IMC */
+.imc-description {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    max-width: 60%; 
+    margin: 20px auto; 
+    text-align: justify; 
+    color: var(--cinza-texto); 
+    padding: 10px; 
+}
+/* Configuração para imagens */
+.image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+/* Caixa de informações */
+.info-box {
+    text-align: center;
+}
+/* Títulos dentro da caixa de informações */
+.info-box h1 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+/* Parágrafos dentro da caixa de informações */
+.info-box p {
+    font-size: 0.9rem;
+    margin: 5px auto;
+    line-height: 1;
+    max-width: 60%;
+}
+/* Resultados do cálculo do IMC */
+.result p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: center;
+}
+/* Barra de navegação */
+.navbar {
+    background-color: var(--verde-detalhes);
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid var(--verde-escuro);
+}
+/* Links na barra de navegação */
+.navbar a {
+    color: var(--branco-principal);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+/* Estilo ao passar o mouse nos links */
+.navbar a:hover {
+    background-color: var(--verde-escuro);
+    border-radius: 5px;
+}
+/* Rodapé do site */
+.footer {
+    background-color: var(--verde-detalhes);
+    color: var(--branco-principal);
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid var(--verde-escuro);
+    margin-top: 20px;
+}

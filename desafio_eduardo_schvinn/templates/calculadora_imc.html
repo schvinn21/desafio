@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de IMC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navegação do site -->
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
+
+    <!-- Container principal -->
+    <div class="container">
+
+        <!-- Seção da calculadora -->
+        <section id="calculadora" class="left">    
+            <h2>Por que medir seu IMC?</h2>
+            <p class = "imc-description">O Índice de Massa Corporal (IMC) é uma ferramenta simples e amplamente 
+            utilizada para avaliar se o peso de uma pessoa está adequado em relação à sua altura. Ele fornece uma estimativa inicial 
+            do estado de saúde, ajudando a identificar riscos associados ao sobrepeso, obesidade ou baixo peso. Monitorar o IMC 
+            regularmente é essencial para prevenir doenças como diabetes, hipertensão e problemas cardiovasculares, além de incentivar
+            um estilo de vida mais saudável. Embora seja uma medida útil, o IMC deve ser complementado
+            por avaliações médicas para garantir um diagnóstico mais preciso e personalizado.</p>
+
+            <!-- Título da calculadora com ícone -->
+            <h2><i class="fa-solid fa-calculator"></i> Calculadora de IMC</h2>
+
+            <!-- Formulário para cálculo do IMC -->
+            <form action="/calcular" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+                <br />
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.1" placeholder="Digite seu peso (kg)" required />
+                <br />
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" name="altura" step="0.01" placeholder="Digite sua altura (m)" required />
+                <br />
+                <button type="submit"><i class="fa-solid fa-check-circle"></i> Calcular IMC</button>
+            </form>
+
+            <!-- Exibição dos resultados após o cálculo -->
+            <div class="result">
+                {% if resultado %}
+                <h2>Resultado:</h2>
+                <p>Nome: {{ resultado.nome }}</p>
+                <p>Peso: {{ resultado.peso }} kg</p>
+                <p>Altura: {{ resultado.altura }} m</p>
+                <p>IMC: {{ resultado.imc }}</p>
+                <p>Status: {{ resultado.status }}</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Seção de informações sobre categorias de IMC -->
+        <section id="sobre" class="right">
+            <div class="info-box">
+                <h2>Compare seu resultado</h2>
+                <img src="{{ url_for('static', filename='imagens/IMC.jpg') }}" alt="IMC" class="image">
+                <h1>Abaixo do peso (IMC ≤ 18,5): Indica insuficiência de peso, podendo afetar a saúde.</h1>
+                <h1>Peso normal (18,5 < IMC ≤ 24,9): Considerado ideal para saúde geral.</h1>
+                <h1>Sobrepeso (25 ≤ IMC < 29,9): Pode aumentar o risco de problemas de saúde.</h1>
+                <h1>Obesidade grau 1 (30 ≤ IMC < 39,9): Aumenta os riscos de doenças relacionadas ao peso.</h1>
+                <h1>Obesidade grau 2 (IMC ≥ 40): Risco elevado de complicações de saúde.</h1>
+            </div>
+        </section>
+    </div>
+    <!-- Rodapé do site -->
+    <footer class="footer">
+        <p>&copy; 2025 Calculadora de IMC. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Eduardo Schvinn</p>
+    </footer>
+</body>
+</html>
